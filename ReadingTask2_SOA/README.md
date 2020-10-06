@@ -1,23 +1,23 @@
 System Integration (soft2020, fall)  -  _Reading Task 2: SOA_
+
 # Difference between **SOA** and **SaaS**
 
-SaaS is a software delivery method
-
-    -SaaS is a category in cloud computing
-
-    -"The resources that are available through SaaS are software applications. The underlying infrastructure for the software is also given to, but hidden from, the users. SaaS is also known as on-demand or hosted software"
-
-    -SaaS users find is that they are able to avoid both installing and maintaining the software
-
-    -
+**SOA** is an architectural model that deals with designing and automating business processes. **Saas** is a model for selling and distributing software hosted on the cloud.
 
 
+## What is SOA
+
+SOA stands for **S**ervice **O**riented **A**rchitecture. SOA  describes some logical recommendations about integrating multiple services in one service. These recommendations are written into som well defined design principles to follow. Furthermore SOA provides a manifest with good advise for developers working on integrating services into one composite application or system.
 
 
+## What is SaaS
 
-SOA is a methodology for designing and automating business processes
+SaaS stands for **S**oftware **A**s **A** **S**ervice. They are cloud hosted services. It can be applications that you can integrate in your own software, or it can be "stand alone" applications. The core of SaaS is to deliver software as services over the internet on subscription.
 
+## The difference
 
+**SOA** and **SaaS** deals with services in two very different ways:
 
----
-SOA is a manufacturing model which deals with designing and building software by applying the service oriented computing principles to software solutions, while SaaS is a model for sales and distribution of software applications. In simpler terms, SaaS is a means of delivering software as services over the internet to its subscribers, while SOA is an architectural model in which the smallest unit of logic is a service. So, SOA (an architectural strategy) and SaaS (a business model) cannot be directly compared. 
+**SaaS** is services on the cloud that you can rent or buy access to.
+
+**SOA** is a style of integration you can follow when you want to combine services into one architecture.
