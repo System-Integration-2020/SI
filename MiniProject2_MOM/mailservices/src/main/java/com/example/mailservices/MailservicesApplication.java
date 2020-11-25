@@ -26,8 +26,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @SpringBootApplication
-public class MailservicesApplication
-{
+public class MailservicesApplication {
     //private final static String QUEUE_NAME = "helloqueue";
     // non-durable, exclusive, auto-delete queue with an automatically generated name
     private static String queueName = "message";
@@ -42,10 +41,8 @@ public class MailservicesApplication
     }
 
 
-
-    public static void main(String[] args) throws Exception
-    {
-       SpringApplication.run(MailservicesApplication.class, args);
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(MailservicesApplication.class, args);
         // args[0]-message; args[1]-topics
         // if (args.length > 0) message = args[0];
         //if (args.length > 1) routingKey = args[1];
@@ -54,22 +51,20 @@ public class MailservicesApplication
         System.out.println(" [4] Sent routing key '" + routingKey + "' and message '" + message + "'");
     }
 
-    public static void createQueue(ArrayList<String> messages, String rKey) throws Exception
-    {
+    public static void createQueue(ArrayList<String> messages, String rKey) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         try (Connection connection = factory.newConnection();
-             Channel channel = connection.createChannel())
-        {
-           // queueName = channel.queueDeclare().getQueue();
+             Channel channel = connection.createChannel()) {
+            // queueName = channel.queueDeclare().getQueue();
 
             channel.exchangeDeclare(EXCHANGE_NAME, "direct");
 
-          //  channel.queueDeclare(queueName, false, false, false, null);
-          //   bind Exchange to queue
-          //  channel.queueBind(queueName, EXCHANGE_NAME, "");
+            //  channel.queueDeclare(queueName, false, false, false, null);
+            //   bind Exchange to queue
+            //  channel.queueBind(queueName, EXCHANGE_NAME, "");
 
-            for (String newMessage: messages) {
+            for (String newMessage : messages) {
                 channel.basicPublish(EXCHANGE_NAME, rKey, null, newMessage.getBytes("UTF-8"));
 
             }
@@ -87,8 +82,7 @@ public class MailservicesApplication
         StringBuilder jsonString = new StringBuilder();
         String line = null;
 
-        while (true)
-        {
+        while (true) {
             try {
                 if (!((line = br.readLine()) != null)) break;
             } catch (IOException e) {
@@ -99,18 +93,17 @@ public class MailservicesApplication
 
         Gson gson = new Gson();
 
-        Type collectionType = new TypeToken<Collection<GroupMember>>(){}.getType();
+        Type collectionType = new TypeToken<Collection<GroupMember>>() {
+        }.getType();
         ArrayList<GroupMember> groupMembers = gson.fromJson(jsonString.toString(), collectionType);
 
 
-        for (GroupMember m:groupMembers)
-        {
+        for (GroupMember m : groupMembers) {
             message = "Dear";
             if (Gender.getGender(m.name).contains("<male>true</male>")) {
                 message = message + " Mr " + m.name;
                 messages.add(message);
-            }
-            else {
+            } else {
                 message = message + " Ms " + m.name;
                 messages.add(message);
             }

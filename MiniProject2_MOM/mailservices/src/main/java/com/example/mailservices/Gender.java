@@ -6,8 +6,7 @@ import org.springframework.web.client.RestTemplate;
 public class Gender {
 
 
-
-    public static String getGender(String name){
+    public static String getGender(String name) {
         RestTemplate restTemplate = new RestTemplate();
         String endPointGetGender = "http://www.thomas-bayer.com/restnames/name.groovy?name={id}";
 
