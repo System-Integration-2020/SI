@@ -12,7 +12,7 @@
     <artifactId>car_catalog_microservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>car_catalog_microservice</name>
-    <description>MS2: Car Catalog Microservice</description>
+    <description>M2: Car Catalog Microservice</description>
 
     <properties>
         <java.version>11</java.version>
