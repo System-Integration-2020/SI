@@ -15,13 +15,3 @@ System Integration Assignments
    6. **Code-on-demand:** <br/>
 
 
-
-
-#### 2. Why is the dissertation considered so important for the software-architectural world?
- I don't know
-
-#### 3. Which is the most valuable outcome you personally get from it?
- . . .
-
-#### 4. How could you implement it in your own practice as a software developer?
- I dont have any prior experience with REST, so I find it hard to think of what I should improve or take with me from this, other than I now know a thing or two about the definition of REST.
